@@ -1,0 +1,17 @@
+{
+  "name": "gangotrigupta",
+  "version": "1.0.0",
+  "description": "This is my first Project",
+  "license": "ISC",
+  "author": "Gangotri",
+  "type": "module", 
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "figlet": "^1.11.4",
+    "give-me-a-joke": "^0.5.1",
+    "random-words": "^2.0.1"
+  }
+}
