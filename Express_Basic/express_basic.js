@@ -1,20 +1,46 @@
 const express=require("express");
 const app=express();
 
-app.use((req,res)=>{
-    console.log("Request received!!");
+// app.use((req,res)=>{
+//     console.log("Request received!!");
     
-    // res.send("this is a basic response");
-    // res.send({
-    //     name:"apple",
-    //     color:"red",
-    // });
+//     // res.send("this is a basic response");
+//     // res.send({
+//     //     name:"apple",
+//     //     color:"red",
+//     // });
 
-    res.send("<h1>FRUITS</h1><ul> <li>Apple</li><li>Orange</li><li>Mango</li></ul>");
+//     res.send("<h1>FRUITS</h1><ul> <li>Apple</li><li>Orange</li><li>Mango</li></ul>");
+
+// });
+
+app.get("/", (req,res)=>{
+    res.send("You contacted root path!!");
+});
+
+app.get("/apple",(req,res)=>{
+    res.send("You are apple!!");
+});
+
+app.get("/mango",(req,res)=>{
+    res.send("You are a mango!!");
 });
 
 
-let port=3000;
+app.get("/*any",(req,res)=>{
+    res.send("This path does not exist!!");
+});
+
+app.post("/",(req,res)=>{
+    res.send("THIS IS POST PATH!!")
+});
+
+//  post is test by post man or hopscotch or using REST Client extension from the VS Code Extensions marketplace
+
+let port=5000;
 app.listen(port,()=>{
     console.log(`app is listening on port ${port}`);
 });
+
+
+
