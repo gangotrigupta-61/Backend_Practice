@@ -27,8 +27,14 @@ app.get("/mango",(req,res)=>{
 });
 
 
-app.get("/*any",(req,res)=>{
-    res.send("This path does not exist!!");
+// app.get("/*any",(req,res)=>{
+//     res.send("This path does not exist!!");
+// });
+
+app.get("/:username/:id",(req,res)=>{
+    let {username,id}=req.params;
+    console.log(req.params);
+    res.send(`Welcome to the path of @${username} and roll no. is ${id}`);
 });
 
 app.post("/",(req,res)=>{
