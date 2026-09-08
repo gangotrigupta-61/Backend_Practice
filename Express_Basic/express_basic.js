@@ -34,7 +34,16 @@ app.get("/mango",(req,res)=>{
 app.get("/:username/:id",(req,res)=>{
     let {username,id}=req.params;
     console.log(req.params);
-    res.send(`Welcome to the path of @${username} and roll no. is ${id}`);
+    res.send(`<h1>Welcome to the path of @${username} and roll no. is ${id}</h1>`);
+});
+
+app.get("/search",(req,res)=>{
+    console.log(req.query);
+    let {q}=req.query;
+    if(!q){
+        res.send("<h1>nothing special </h1>");
+    }
+    res.send(`Search results for ${q}`);
 });
 
 app.post("/",(req,res)=>{
