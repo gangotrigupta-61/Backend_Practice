@@ -3,5 +3,8 @@ const app=express();
 
 let port=3000;
 app.listen(()=>{
-    console.log("Listening on Port ")
-})
+    console.log("Listening on Port ");
+    console.log("Lets start with templating!!");
+});
+
+
