@@ -8,7 +8,7 @@ app.get("/",(req,res)=>{
 });
 
 app.get("/hello",(req,res)=>{
-    res.send("hello I am hello path");
+    res.send("hello I am hello path and HELLO EVERYONE!!");
 });
 
 // Passing data to ejs
