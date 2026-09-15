@@ -26,6 +26,15 @@ app.listen(port,()=>{
     console.log(`Listening on Port ${port}`);
 });
 
+app.get("/ig/:username",(req,res)=>{
+    const followers=["adam","bob","steve","abc"];
+    let {username}=req.params;
+    res.render("insta.ejs",{username,followers});
+});
+
+
+
+
 
 
 
