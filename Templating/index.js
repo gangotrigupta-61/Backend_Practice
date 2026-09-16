@@ -26,10 +26,21 @@ app.listen(port,()=>{
     console.log(`Listening on Port ${port}`);
 });
 
+// serving static file
+app.use(express.static("public/css"));
+app.use(express.static("public/js"));
+
+
 app.get("/ig/:username",(req,res)=>{
-    const followers=["adam","bob","steve","abc"];
     let {username}=req.params;
-    res.render("insta.ejs",{username,followers});
+    const instaData=require("./data.json");
+    const data= instaData[username];
+    if(data){
+        res.render("insta.ejs",{data});
+    }
+    else{
+        res.render("error.ejs");
+    }
 });
 
 
