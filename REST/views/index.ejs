@@ -10,12 +10,13 @@
         <div class="post">
             <h3 class="user"> @<%= post.username %></h3>
             <h4 class="content"> <%= post.content %></h4>
+            <a href="http://localhost:8080/posts/<%= post.id %>">SeeinDetail</a>
         </div>
-        
-
    <% } %>
-
+<br><br>
     <a href="http://localhost:8080/posts/new"><button>AddNewPost</button></a>
+
+    <a href="http://localhost:8080/posts/<%= post.id %>/edit"><button>Edit</button></a>
   
   
 </body>
