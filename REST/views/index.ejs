@@ -1,5 +1,4 @@
 
-
 <head>
 <title>All Posts</title>
 <link rel="stylesheet" href="style.css">
@@ -10,13 +9,18 @@
         <div class="post">
             <h3 class="user"> @<%= post.username %></h3>
             <h4 class="content"> <%= post.content %></h4>
-            <a href="http://localhost:8080/posts/<%= post.id %>">SeeinDetail</a>
+
+            <a href="http://localhost:8080/posts/<%= post.id %>"><button>SeeinDetail</button></a>
+ 
+            <a href="http://localhost:8080/posts/<%= post.id %>/edit"><button>Edit</button></a> <br><br>
+
+            <form method="post" action="/posts/<%=post.id%>?_method=DELETE" >
+                <BUtton>Delete Post</BUtton>
+            </form>
+
         </div>
    <% } %>
 <br><br>
     <a href="http://localhost:8080/posts/new"><button>AddNewPost</button></a>
-
-    <a href="http://localhost:8080/posts/<%= post.id %>/edit"><button>Edit</button></a>
-  
   
 </body>
